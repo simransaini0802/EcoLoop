@@ -1,0 +1,35 @@
+### Health check
+GET http://localhost:5674/api/health
+
+### Register user
+POST http://localhost:5674/api/auth/register
+Content-Type: application/json
+
+{
+  "name": "Eco Member",
+  "email": "member@example.com",
+  "password": "StrongPass123",
+  "address": "Sector 22, Chandigarh"
+}
+
+### Login
+POST http://localhost:5674/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "member@example.com",
+  "password": "StrongPass123"
+}
+
+### Create collection request (replace TOKEN)
+POST http://localhost:5674/api/requests
+Authorization: Bearer TOKEN
+Content-Type: application/json
+
+{
+  "category": "Plastic",
+  "quantityKg": 2,
+  "address": "Sector 22, Chandigarh",
+  "scheduledDate": "2027-01-10",
+  "notes": "Please call on arrival"
+}
